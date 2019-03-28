@@ -28,17 +28,22 @@ function App() {
             </td>
             <td style={{ verticalAlign: "middle" }}>-1°</td>
             <td
+              class="is-paddingless"
               style={{
                 verticalAlign: "middle",
-                textAlign: "right",
-                paddingRight: 0
+                textAlign: "right"
               }}
             >
               <span class="icon">
                 <FontAwesomeIcon icon={faLocationArrow} size="xs" />
               </span>
             </td>
-            <td style={{ verticalAlign: "middle", paddingLeft: 0 }}>3 м/с</td>
+            <td
+              class="is-paddingless"
+              style={{ verticalAlign: "middle", paddingLeft: 0 }}
+            >
+              3 м/с
+            </td>
           </tr>
         </table>
       </div>
