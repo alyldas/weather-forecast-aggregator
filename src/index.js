@@ -20,7 +20,7 @@ function App() {
               <br />
               29 Марта
             </td>
-            <td style={{ verticalAlign: "middle" }}>
+            <td class="is-paddingless" style={{ verticalAlign: "middle" }}>
               <ReactAnimatedWeather icon="CLEAR_DAY" size="32" />
             </td>
             <td style={{ verticalAlign: "middle", textAlign: "right" }}>
@@ -38,10 +38,7 @@ function App() {
                 <FontAwesomeIcon icon={faLocationArrow} size="xs" />
               </span>
             </td>
-            <td
-              class="is-paddingless"
-              style={{ verticalAlign: "middle", paddingLeft: 0 }}
-            >
+            <td class="is-paddingless" style={{ verticalAlign: "middle" }}>
               3 м/с
             </td>
           </tr>
