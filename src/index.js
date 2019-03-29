@@ -8,6 +8,7 @@ import ReactAnimatedWeather from "react-animated-weather";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import axios from "axios";
 
@@ -191,9 +192,58 @@ const DarkSkyDay = props => (
   </DarkSky>
 );
 
+function SearchButton() {
+  function handleClick(e) {
+    e.preventDefault();
+    console.log("The link was clicked.");
+  }
+
+  return (
+    <a class="button is-primary" onClick={handleClick}>
+      <span class="icon is-small">
+        <FontAwesomeIcon icon={faSearch} />
+      </span>
+      <span>Поиск</span>
+    </a>
+  );
+}
+
 function App() {
   return (
     <section class="section">
+      <div class="container">
+        <div class="field has-addons is-marginless">
+          <div class="control is-expanded">
+            <input class="input" type="text" placeholder="Введите город" />
+          </div>
+          <div class="control">
+            <SearchButton />
+          </div>
+        </div>
+        <p class="help">
+          *или оставьте поле пустым чтобы определить местоположение
+          автоматически
+        </p>
+        <div class="tabs is-fullwidth">
+          <ul>
+            <li class="is-active">
+              <a>Dark Sky</a>
+            </li>
+            <li>
+              <a>Weatherbit</a>
+            </li>
+          </ul>
+        </div>
+        <div class="columns is-desktop">
+          <DarkSkyDay day={0} />
+          <DarkSkyDay day={1} />
+          <DarkSkyDay day={2} />
+          <DarkSkyDay day={3} />
+          <DarkSkyDay day={4} />
+          <DarkSkyDay day={5} />
+          <DarkSkyDay day={6} />
+        </div>
+      </div>
       {/* <div class="container">
         <table class="table is-fullwidth is-narrow">
           <tr>
@@ -231,15 +281,6 @@ function App() {
         </table>
       </div> */}
 
-      <div class="columns is-desktop">
-        <DarkSkyDay day={0} />
-        <DarkSkyDay day={1} />
-        <DarkSkyDay day={2} />
-        <DarkSkyDay day={3} />
-        <DarkSkyDay day={4} />
-        <DarkSkyDay day={5} />
-        <DarkSkyDay day={6} />
-      </div>
       {/* <RenderPropApproach /> */}
     </section>
   );
